@@ -26,6 +26,8 @@ public class EditDeveloper {
         @Min(0)
         @Max(20)
         private Integer experienceYears;
+        private String name;
+        private Integer age;
     }
 
 }

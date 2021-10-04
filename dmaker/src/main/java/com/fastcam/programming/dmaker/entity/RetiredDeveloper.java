@@ -1,6 +1,5 @@
 package com.fastcam.programming.dmaker.entity;
 
-import com.fastcam.programming.dmaker.code.StatusCode;
 import com.fastcam.programming.dmaker.type.DeveloperLevel;
 import com.fastcam.programming.dmaker.type.DeveloperSkillType;
 import lombok.*;
@@ -15,28 +14,17 @@ import java.time.LocalDateTime;
 @Setter
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name = "developer")
-public class Developer {
+public class RetiredDeveloper {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    protected  Long id;
 
-    @Enumerated(EnumType.STRING)
-    private DeveloperLevel developerLevel;
-
-    @Enumerated(EnumType.STRING)
-    private DeveloperSkillType developerSkillType;
-
-    @Enumerated(EnumType.STRING)
-    private StatusCode status;
-
-    private Integer experienceYears;
     private String memberId;
     private String name;
-    private Integer age;
 
     @CreatedDate
     private LocalDateTime createdAt;

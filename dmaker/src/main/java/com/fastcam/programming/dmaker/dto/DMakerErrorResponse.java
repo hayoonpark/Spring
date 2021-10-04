@@ -1,6 +1,5 @@
 package com.fastcam.programming.dmaker.dto;
 
-
 import com.fastcam.programming.dmaker.entity.Developer;
 import com.fastcam.programming.dmaker.exception.DMakerErrorCode;
 import com.fastcam.programming.dmaker.type.DeveloperLevel;
@@ -12,17 +11,19 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DeveloperDto{
+public class DMakerErrorResponse {
     private DeveloperLevel developerLevel;
     private DeveloperSkillType developerSkillType;
     private String memberId;
 
-    public static DeveloperDto fromEntity(Developer developer) {
-        return DeveloperDto.builder()
+    public  static DMakerErrorResponse fromEntity(Developer developer){
+        return DMakerErrorResponse.builder()
                 .developerLevel(developer.getDeveloperLevel())
                 .developerSkillType(developer.getDeveloperSkillType())
                 .memberId(developer.getMemberId())
                 .build();
     }
+
+
 
 }

@@ -1,6 +1,8 @@
 package com.fastcam.programming.dmaker.dto;
 
+import com.fastcam.programming.dmaker.code.StatusCode;
 import com.fastcam.programming.dmaker.entity.Developer;
+import com.fastcam.programming.dmaker.exception.DMakerErrorCode;
 import com.fastcam.programming.dmaker.type.DeveloperLevel;
 import com.fastcam.programming.dmaker.type.DeveloperSkillType;
 import lombok.*;
@@ -20,8 +22,10 @@ public class CreateDeveloper {
     public static class Request{
         @NotNull
         private DeveloperLevel developerLevel;
+
         @NotNull
         private DeveloperSkillType developerSkillType;
+
         @NotNull
         @Min(0)
         @Max(20)
@@ -31,7 +35,7 @@ public class CreateDeveloper {
         @Size(min = 3, max = 50, message = "memberId size must 3-50")
         private String memberId;
         @NotNull
-        @Size(min = 3, max = 20, message = "name must 3-20")
+        @Size(min = 2, max = 20, message = "name must 3-20")
         private String name;
 
         @Min(18)
@@ -48,6 +52,10 @@ public class CreateDeveloper {
         private DeveloperSkillType developerSkillType;
         private Integer experienceYears;
         private String memberId;
+        private StatusCode status;
+
+        private DMakerErrorCode errorCode;
+        private String errorMessage;
 
         public static Response fromEntity(Developer developer){
             return Response.builder()
