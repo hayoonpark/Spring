@@ -35,7 +35,7 @@ class DmakerserviceTest {
     private DMakerService dMakerService;
 
     @Test
-    void getDeveloperTest() {
+    void testSomething() {
         given(developerRepository.findByMemberId(anyString()))
                 .willReturn(Optional.of(Developer.builder()
                         .developerLevel(SENIOR)
@@ -48,11 +48,8 @@ class DmakerserviceTest {
 
         DeveloperDetailDto developerDetail = dMakerService.getDeveloper("memberId");
 
-        assertEquals(JUNIOR, developerDetail.getDeveloperLevel());
+        assertEquals(SENIOR, developerDetail.getDeveloperLevel());
         assertEquals(FRONT_END, developerDetail.getDeveloperSkillType());
         assertEquals(12, developerDetail.getExperienceYears());
     }
-
-
-
 }

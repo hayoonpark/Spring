@@ -12,18 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class DMakerErrorResponse {
-    private DeveloperLevel developerLevel;
-    private DeveloperSkillType developerSkillType;
-    private String memberId;
-
-    public  static DMakerErrorResponse fromEntity(Developer developer){
-        return DMakerErrorResponse.builder()
-                .developerLevel(developer.getDeveloperLevel())
-                .developerSkillType(developer.getDeveloperSkillType())
-                .memberId(developer.getMemberId())
-                .build();
+    private DMakerErrorCode errorCode;
+    private String errorMessage;
     }
 
-
-
-}
