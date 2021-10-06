@@ -79,15 +79,16 @@ public class DMakerService {
 
 //            throw new DMakerException(LEVEL_AND_EXPERIENCE_YEARS_NOT_MATCH);
         }
+
+        if(developerLevel ==  DeveloperLevel.JUNIOR
+                && (experienceYears < 4 || experienceYears > 10)){
+            throw  new DMakerException(LEVEL_AND_EXPERIENCE_YEARS_NOT_MATCH);
+        }
+        if(developerLevel == DeveloperLevel.JUNIOR && experienceYears > 4){
+            throw new DMakerException(LEVEL_AND_EXPERIENCE_YEARS_NOT_MATCH);
+        }
         return new DeveloperValdationDto(LEVEL_AND_EXPERIENCE_YEARS_NOT_MATCH,
                 LEVEL_AND_EXPERIENCE_YEARS_NOT_MATCH.getMessage());
-//        if(developerLevel ==  DeveloperLevel.JUNIOR
-//                && (experienceYears < 4 || experienceYears > 10)){
-//            throw  new DMakerException(LEVEL_AND_EXPERIENCE_YEARS_NOT_MATCH);
-//        }
-//        if(developerLevel == DeveloperLevel.JUNIOR && experienceYears > 4){
-//            throw new DMakerException(LEVEL_AND_EXPERIENCE_YEARS_NOT_MATCH);
-//        }
     }
 
     public List<DeveloperDto> getAllEmployedDevelopers() {
