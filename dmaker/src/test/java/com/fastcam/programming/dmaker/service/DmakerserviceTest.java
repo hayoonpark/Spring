@@ -33,9 +33,6 @@ class DmakerserviceTest {
     @Mock
     private DeveloperRepository developerRepository;
 
-    @Mock
-    private RetiredDeveloperRepository retiredDeveloperRepository;
-
     @InjectMocks
     private DMakerService dMakerService;
 
@@ -44,6 +41,7 @@ class DmakerserviceTest {
             .developerSkillType(FRONT_END)
             .experienceYears(12)
             .status(EMPLOYED)
+            .memberId("memberId")
             .name("name")
             .age(12)
             .build();
