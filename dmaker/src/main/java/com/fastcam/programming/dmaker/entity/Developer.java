@@ -1,6 +1,7 @@
 package com.fastcam.programming.dmaker.entity;
 
 import com.fastcam.programming.dmaker.code.StatusCode;
+import com.fastcam.programming.dmaker.dto.CreateDeveloper;
 import com.fastcam.programming.dmaker.type.DeveloperLevel;
 import com.fastcam.programming.dmaker.type.DeveloperSkillType;
 import lombok.*;
@@ -43,4 +44,7 @@ public class Developer {
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
+
+
+
 }
